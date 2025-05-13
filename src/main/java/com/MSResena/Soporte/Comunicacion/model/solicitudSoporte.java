@@ -33,12 +33,12 @@ public class solicitudSoporte {
     @Column(nullable = false, length = 100)
     private String titulo;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
-    private String contenido;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private TipoSolicitud tipo;
+
+    @Column(nullable = false, columnDefinition = "TEXT")
+    private String contenido;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)

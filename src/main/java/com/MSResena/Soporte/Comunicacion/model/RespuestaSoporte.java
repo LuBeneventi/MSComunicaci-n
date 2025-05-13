@@ -2,6 +2,8 @@ package com.MSResena.Soporte.Comunicacion.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,10 +23,10 @@ public class RespuestaSoporte {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idRespuesta;
+    private int idRespuesta;
 
     @Column(nullable = false)
-    private Long idUsuario;
+    private int idUsuario;
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String contenido;
@@ -33,6 +35,7 @@ public class RespuestaSoporte {
     private LocalDate fechaRespuesta;
 
     @ManyToOne
-    @JoinColumn(name = "id_soporte", nullable = false)
+    @JoinColumn(name = "idSoporte", nullable = false)
+    @JsonIgnore
     private solicitudSoporte soporte;
 }
