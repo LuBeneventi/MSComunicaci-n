@@ -54,4 +54,9 @@ public class soporteService {
 
         return saved;
     }
+
+    public List<solicitudSoporte> buscarPorCliente(int idCliente){
+        return sRepository.findByIdCliente(idCliente);
+    }
+
 }

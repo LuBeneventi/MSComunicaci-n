@@ -25,8 +25,11 @@ public class RespuestaSoporte {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idRespuesta;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private int idUsuario;
+
+    @Column(nullable = true)
+    private int idCliente;
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String contenido;

@@ -29,4 +29,8 @@ public class resenaService {
     public List<resena> buscarPorProducto(int idProducto) {
         return rRepo.findByIdProducto(idProducto);
     }
+
+    public List<resena> buscarPorCliente(int idCliente){
+        return rRepo.findByIdCliente(idCliente);
+    }
 }

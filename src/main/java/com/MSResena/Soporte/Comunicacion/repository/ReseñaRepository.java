@@ -11,4 +11,5 @@ import com.MSResena.Soporte.Comunicacion.model.resena;
 public interface ReseñaRepository extends JpaRepository<resena, Integer>{
 
     List<resena> findByIdProducto(int idProducto);
+    List<resena> findByIdCliente(int idCliente);
 }

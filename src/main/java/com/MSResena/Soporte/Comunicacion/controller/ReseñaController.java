@@ -31,8 +31,13 @@ public class ReseñaController {
         return ResponseEntity.ok(rService.listar());
     }
 
-    @GetMapping("/{idProducto}")
+    @GetMapping("/Producto: {idProducto}")
     public ResponseEntity<List<resena>> buscarPorProducto(@PathVariable int idProducto) {
         return ResponseEntity.ok(rService.buscarPorProducto(idProducto));
+    }
+
+    @GetMapping("/Cliente: {idCliente}")
+    public ResponseEntity<List<resena>> buscarPorCliente(@PathVariable int idCliente) {
+        return ResponseEntity.ok(rService.buscarPorCliente(idCliente));
     }
 }

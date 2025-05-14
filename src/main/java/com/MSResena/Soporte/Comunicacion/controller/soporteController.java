@@ -1,6 +1,7 @@
 package com.MSResena.Soporte.Comunicacion.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,5 +44,15 @@ public class soporteController {
             @PathVariable int id,
             @RequestBody RespuestaSoporte respuesta) {
         return ResponseEntity.ok(sService.agregarRespuesta(id, respuesta));
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Optional<solicitudSoporte>> buscar(@PathVariable int id){
+        return ResponseEntity.ok(sService.buscarPorId(id));
+    }
+
+    @GetMapping("/Cliente: {idCliente}")
+    public ResponseEntity<List<solicitudSoporte>> buscarPorCliente(@PathVariable int idCliente){
+        return ResponseEntity.ok(sService.buscarPorCliente(idCliente));
     }
 }
