@@ -39,12 +39,12 @@ public class soporteController {
         return ResponseEntity.ok(sService.listar());
     }
 
-    @PutMapping("/cerrar/{id}")
+    @PutMapping("/{id}/cerrar")
     public ResponseEntity<solicitudSoporte> cerrar(@PathVariable int id) {
         return ResponseEntity.ok(sService.cerrar(id));
     }
 
-    @PostMapping("/responder/{id}")
+    @PostMapping("/{id}/responder")
     public ResponseEntity<RespuestaSoporte> responder(
             @PathVariable int id,
             @RequestBody RespuestaSoporte respuesta) {
