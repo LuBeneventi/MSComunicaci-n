@@ -2,6 +2,7 @@ package com.MSResena.Soporte.Comunicacion.service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,20 +31,25 @@ public class resenaService {
         return rRepo.findByIdProducto(idProducto);
     }
 
+    public Optional<resena> Buscar(int id){
+        return rRepo.findById(id);
+    }
+
     public List<resena> buscarPorCliente(int idCliente){
         return rRepo.findByIdCliente(idCliente);
     }
 
-    public resena editar(resena res){
-        return guardar(res);
+    public resena editar(int id, resena actualizada) {
+        resena existente = rRepo.findById(id).orElseThrow();
+        existente.setComentario(actualizada.getComentario());
+        existente.setCalificacion(actualizada.getCalificacion());
+        return guardar(existente);
     }
 
-    public Boolean eliminar(int id){
-        if(rRepo.existsById(id)){
-            rRepo.deleteById(id);
-            return true;
+    public void eliminar(int id) {
+        if (!rRepo.existsById(id)) {
+            throw new RuntimeException("Reseña no encontrada con ID: " + id);
         }
-        return false;
-
+        rRepo.deleteById(id);
     }
 }

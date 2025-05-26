@@ -20,7 +20,7 @@ import com.MSResena.Soporte.Comunicacion.model.solicitudSoporte;
 import com.MSResena.Soporte.Comunicacion.service.soporteService;
 
 @RestController
-@RequestMapping("/api/SoporteTécnico")
+@RequestMapping("/api/soporte")
 public class soporteController {
 
     @Autowired
