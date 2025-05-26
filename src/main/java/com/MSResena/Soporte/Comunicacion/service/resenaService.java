@@ -33,4 +33,17 @@ public class resenaService {
     public List<resena> buscarPorCliente(int idCliente){
         return rRepo.findByIdCliente(idCliente);
     }
+
+    public resena editar(resena res){
+        return guardar(res);
+    }
+
+    public Boolean eliminar(int id){
+        if(rRepo.existsById(id)){
+            rRepo.deleteById(id);
+            return true;
+        }
+        return false;
+
+    }
 }

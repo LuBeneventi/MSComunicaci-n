@@ -59,4 +59,17 @@ public class soporteService {
         return sRepository.findByIdCliente(idCliente);
     }
 
+    public solicitudSoporte editaSoporte(solicitudSoporte ss){
+        return crearSolicitud(ss);
+    }
+
+    public Boolean eliminarSolicitud(int id){
+        solicitudSoporte ss = sRepository.findById(id).orElseThrow();
+        if(sRepository.existsById(id) && ss.getEstado() != EstadoSoporte.RESPONDIDA){
+            sRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
 }

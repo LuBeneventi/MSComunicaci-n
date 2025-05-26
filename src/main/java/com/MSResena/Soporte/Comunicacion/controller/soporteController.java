@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -63,5 +64,18 @@ public class soporteController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return ResponseEntity.ok(sService.buscarPorCliente(idCliente));
+    }
+
+    @PutMapping("/{id}/editar")
+    public ResponseEntity<solicitudSoporte> EditarSolicitud(@RequestBody solicitudSoporte ss, @PathVariable int id){
+        ss.setIdSoporte(id);
+        return ResponseEntity.ok(sService.editaSoporte(ss));
+    }
+
+    @DeleteMapping("/{id}/eliminar")
+    public ResponseEntity<Void> eliminarSolicitud(@PathVariable int id) {
+        return sService.eliminarSolicitud(id)
+                ? ResponseEntity.noContent().build()
+                : ResponseEntity.notFound().build();
     }
 }
