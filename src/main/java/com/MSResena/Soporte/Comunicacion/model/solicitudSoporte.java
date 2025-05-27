@@ -47,6 +47,6 @@ public class solicitudSoporte {
     @Column(name = "fecha_creacion", nullable = false)
     private LocalDate fechaCreacion;
 
-    @OneToMany(mappedBy = "soporte", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "soporte", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RespuestaSoporte> respuestas;
 }
