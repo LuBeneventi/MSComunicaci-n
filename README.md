@@ -23,19 +23,19 @@ VALUES (1, '2025-05-10', 105, 205, 1005, 'Muy mala experiencia, no lo volvería 
 }
 ##Solicitud
 INSERT INTO `solicitud_soporte` (`fecha_creacion`, `id_cliente`, `id_soporte`, `titulo`, `contenido`, `estado`, `tipo`)
-VALUES ('2025-05-20', 101, 2001, 'Problema con la entrega', 'El paquete no ha llegado desde hace 10 días.', 'Abierto', 'Logística');
+VALUES ('2025-05-20', 101, 2001, 'Problema con la entrega', 'El paquete no ha llegado desde hace 10 días.', 'ABIERTO', 'RECLAMO');
 
 INSERT INTO `solicitud_soporte` (`fecha_creacion`, `id_cliente`, `id_soporte`, `titulo`, `contenido`, `estado`, `tipo`)
-VALUES ('2025-05-21', 102, 2002, 'Error en facturación', 'Se me ha cobrado dos veces por el mismo pedido.', 'En revisión', 'Facturación');
+VALUES ('2025-05-21', 102, 2002, 'Error en facturación', 'Se me ha cobrado dos veces por el mismo pedido.', 'EN_PROCESO', 'RECLAMO');
 
 INSERT INTO `solicitud_soporte` (`fecha_creacion`, `id_cliente`, `id_soporte`, `titulo`, `contenido`, `estado`, `tipo`)
-VALUES ('2025-05-22', 103, 2003, 'Producto defectuoso', 'El artículo llegó roto y no funciona.', 'Cerrado', 'Producto');
+VALUES ('2025-05-22', 103, 2003, 'Producto defectuoso', 'El artículo llegó roto y no funciona.', 'EN_PROCESO', 'RECLAMO');
 
 INSERT INTO `solicitud_soporte` (`fecha_creacion`, `id_cliente`, `id_soporte`, `titulo`, `contenido`, `estado`, `tipo`)
-VALUES ('2025-05-23', 104, 2004, 'No puedo iniciar sesión', 'Olvidé mi contraseña y no puedo restablecerla.', 'Abierto', 'Técnico');
+VALUES ('2025-05-23', 104, 2004, 'No puedo iniciar sesión', 'Olvidé mi contraseña y no puedo restablecerla.', 'EN_PROCESO', 'RECLAMO');
 
 INSERT INTO `solicitud_soporte` (`fecha_creacion`, `id_cliente`, `id_soporte`, `titulo`, `contenido`, `estado`, `tipo`)
-VALUES ('2025-05-24', 105, 2005, 'Consulta sobre garantía
+VALUES ('2025-05-24', 105, 2005, 'Consulta sobre garantía', '¿Cuánto tiempo de garantía tiene el producto que compré?', 'EN_PROCESO', 'CONSULTA');
 
 
 {
